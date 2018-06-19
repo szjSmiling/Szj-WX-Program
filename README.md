@@ -5,7 +5,7 @@ study the wechat webapp development
 ## 概述
 微信小程序版豆瓣电影（非官方出品）
 - 数据来源：[豆瓣电影API](https://developers.douban.com/wiki/?title=movie_v2)
-- 开发工具：微信开发者工具 0.14.140900
+- 开发工具：微信开发者工具 
 
 
 ## 功能
@@ -15,7 +15,7 @@ study the wechat webapp development
 - 影人条目信息
 
 ## 预览
-![豆瓣电影](https://github.com/szjSmiling/wechat-program-study/tree/master/images/douban-movie.gif)
+![豆瓣电影](https://github.com/szjSmiling/wechat-program-study/blob/master/images/douban-movie.gif)
 
 ## 其他
 声明：非豆瓣官方出品，引用请注明出处
