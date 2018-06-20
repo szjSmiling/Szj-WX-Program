@@ -1,12 +1,30 @@
 
 <!--pages/welcome/welcome.wxml-->
+<view class="body">
+  <view class="nav bc_white">
+    <view class="{{selected?'red':'default'}}" bindtap="selected">系统提醒</view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">优惠活动</view>
+  </view>
+  <view class="{{selected?'show':'hidden'}}">for system</view>
+  <view class="{{selected1?'show':'hidden'}}">for activity</view>
+</view>
 <view class="container">
   <view class="userinfo">
-    <button class="getInfo" size="mini" open-type="getUserInfo" lang="zh_CN" type="primary" bindgetuserinfo="onGotUserInfo">是否授权登陆?</button>
+    <text>If you can't get the user's infomation,you can get it by clicking the button below. </text>
+    <button class="getInfo" size="mini" open-type="getUserInfo" lang="zh_CN" type="primary" bindgetuserinfo="onGotUserInfo">{{isLogin}}</button>
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <view bindtap="bindViewTap" class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="usermotto">
+    <text class="user-motto" bindtap="bindViewTap">开始浏览</text>
   </view>
+  <map id="map" longitude="113.324520" latitude="23.099994" scale="14"
+   controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" 
+   bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" 
+   show-location 
+   style="background:#eee;padding:30rpx 2.5% 0;width:95%; height: 200px;">
+   <cover-view class="controls">
+     <cover-image class="img" src="/images/map/map2.png" />
+   </cover-view>
+  </map>
 </view>

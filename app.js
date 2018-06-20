@@ -10,6 +10,7 @@ App({ //注册页面函数App()
     });
   },
   onShow: function(){
+    let that = this;
     if(this.globalData.refreshFlag){
       this.globalData.refreshFlag = false;
     }
@@ -23,7 +24,6 @@ App({ //注册页面函数App()
         success: function (code) {
           wx.getUserInfo({
             success: function (res) {
-              console.log("登陆成功!");
               that.globalData.userInfo = res.userInfo;
               typeof cb == "function" && cb(that.globalData.userInfo);
             }

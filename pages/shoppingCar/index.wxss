@@ -1,0 +1,52 @@
+/* index.wxss */
+#shopCar{
+
+}
+view , scroll-view{
+  padding: 0px;
+  margin: 0px;
+}
+.weui-navbar{
+   width: 100%;
+   position: fixed;
+   border-bottom: 1px solid #00bba1;
+   box-sizing: border-box;
+   white-space: nowrap; 
+   z-index: 100;
+   background: white;
+}
+.rec{
+  width: 100%;
+  padding:47px 0 0;
+}
+.weui-navbar .default-item{
+  display: inline-block;
+  text-align: center;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  height:47px;
+  line-height: 47px;
+}
+.weui-navbar .item_on{
+   color: #00bba1;
+}
+.weui-navbar-slider{
+    width: 160rpx;
+    height: 2px;
+    content:"";
+    background: #00bba1;
+    margin-left: 12.5rpx;
+    transition: transform .5s;
+}
+.swiper-box{
+  height:240px;
+  border-bottom: 1px solid #d1d1d1;
+}
+.swiper-box .swiper-item{
+   text-align: center;
+   height: 100%;
+}
+.swiper-box .swiper-item image{
+  width: 100%;
+  height:1005;
+}

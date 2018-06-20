@@ -1,14 +1,20 @@
 /* pages/welcome/welcome.wxss */
 
 .container {
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 20rpx 0;
   box-sizing: border-box;
 }
+.nav{width:100%;height:70rpx;display:flex;flex-direction:row;}
+.nav view:nth-child(1){border-right:1px solid gainsboro;}
+.default{line-height:70rpx;text-align:center;flex:1;color:#0b9d78;font-weight:bold;font-size:28rpx;}
+.red{background:#0b9d78;line-height:70rpx;text-align:center;color:#fff;flex:1;font-weight:bold;font-size:28rpx;}
+.show{display:block;text-align:center;line-height:200rpx;border:1px solid #eee;}
+.hidden{display:none;text-align:center;line-height:200px;border:1px solid #eee;}
+
 .getInfo{
   line-height:2;       
 }
@@ -16,24 +22,53 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
-
+.userinfo text:nth-of-type(1){width:500rpx;padding:20rpx 50rpx;font-size:20rpx;color:#f00;}
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 200rpx;
+  height: 200rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #9e9e9e;
+  font-size:35rpx;
 }
 
 .usermotto {
+  width:30rpx;
   color: #9e9e9e;
-  padding: 4rpx 20rpx 4rpx 20rpx;
+  padding: 4rpx 20rpx;
   border: 1px solid #ddd;
   border-radius: 4rpx;
   box-shadow:0px 5rpx 10rpx 3rpx #999;
   cursor: pointer;
+  position: fixed;
+  right:10rpx;
+  top: 45%;
+}
+map .controls {
+  position: relative;
+  left: 0;
+  top: 30rpx;
+  width: 40px;
+  height: 40px;
+  background:#fff;
+}
+map .controls .img{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin:auto;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
