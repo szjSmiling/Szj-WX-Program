@@ -1,17 +1,25 @@
 <view id="shopCar">
-  <scroll-view id="scrollX" enable-back-to-top="true" scroll-x="true" class="weui-navbar" scroll-with-animation="true">
-    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
-      <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
-        {{item}}
+  <scroll-view id="scrollX" enable-back-to-top="true" scroll-x="true" class="weui-navbar" scroll-with-animation="true"
+    upper-threshold="" scroll-into-view="{{toView}}" >
+    <block wx:for-items="{{items}}" wx:key="{{index}}">
+      <view id="{{item.type}}" data-index="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
+        {{item.id}}
       </view>
     </block>
     <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
   </scroll-view>
   <view class="rec">
     <swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
-      <swiper-item class="swiper-item" wx:for="{{items}}" wx:key="{{index}}">
-        <view class="slide-view"><image src="{{item}}"></image></view>
+      <swiper-item class="swiper-item" wx:for="{{items}}" wx:key="{{index}}" bindtap="bindViewTap">
+        <view class="slide-view"><image src="{{item.img}}"></image></view>
       </swiper-item>
     </swiper>
   </view>
+  <loading-tag id="loadTag" inner-text="{{loading.text}}" hidden="{{loading.hidden}}" 
+     bind:cencelEvent='tryCommunication'>
+    <text class="loadText">
+      如果不写 inner-text 属性,那么就会使用默认值.这里使用则可以根据页面自定义内容;
+      注意: inner-text="{{}}" 是为了和组件进行通信传值. bind:loadFn:'你想要在组件里调用的方法名'
+    </text>
+  </loading-tag>
 </view>

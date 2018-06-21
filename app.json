@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/personalCenter/center",
     "pages/shoppingCar/index",
     "pages/welcome/welcome",
     "pages/watchHistory/history",
-    "pages/personalCenter/center",
     "pages/movie/movie",
     "pages/movie/search/search",
     "pages/movie/movie-more/movie-more",
@@ -12,7 +12,9 @@
     "pages/movie/movie-detail/rating/rating",
     "pages/movie/movie-detail/celebrity/celebrity",
     "pages/movie/movie-detail/movie-poster/movie-poster",
-    "pages/publicBar/tabBar"
+    "pages/shoppingCar/shopDetail/shopDetail",
+    "components/loading/loading",
+    "components/dialog/dialog"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -27,31 +29,36 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "tabBar":{
-    "color":"#999",
-    "selectedColor":"#3cc51f",
-    "borderStyle":"white",
-    "backgroundColor":"#fff",
-    "list":[{
-      "pagePath":"pages/welcome/welcome",
-      "iconPath":"images/tabBar/proud.png",
-      "selectedIconPath":"images/tabBar/smilingCry.png",
-      "text":"首页"
-    },{
-      "pagePath":"pages/shoppingCar/index",
-      "iconPath":"images/tabBar/proud.png",
-      "selectedIconPath":"images/tabBar/death.png",
-      "text":"购物车"
-    },{
-      "pagePath":"pages/personalCenter/center",
-      "iconPath":"images/tabBar/proud.png",
-      "selectedIconPath":"images/tabBar/surprise.png",
-      "text":"个人中心"
-    },{
-      "pagePath":"pages/watchHistory/history",
-      "iconPath":"images/tabBar/proud.png",
-      "selectedIconPath":"images/tabBar/anger.png",
-      "text":"浏览记录"
-    }
-  ]}
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/welcome/welcome",
+        "iconPath": "images/tabBar/proud.png",
+        "selectedIconPath": "images/tabBar/smilingCry.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shoppingCar/index",
+        "iconPath": "images/tabBar/proud.png",
+        "selectedIconPath": "images/tabBar/death.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/personalCenter/center",
+        "iconPath": "images/tabBar/proud.png",
+        "selectedIconPath": "images/tabBar/surprise.png",
+        "text": "个人中心"
+      },
+      {
+        "pagePath": "pages/watchHistory/history",
+        "iconPath": "images/tabBar/proud.png",
+        "selectedIconPath": "images/tabBar/anger.png",
+        "text": "浏览记录"
+      }
+    ]
+  }
 }

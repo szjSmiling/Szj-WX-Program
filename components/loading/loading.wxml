@@ -1,0 +1,4 @@
+<view class="loading" hidden="{{hidden}}">
+  <loading hidden="{{hidden}}">{{innerText}}</loading>
+</view>
+<slot></slot>

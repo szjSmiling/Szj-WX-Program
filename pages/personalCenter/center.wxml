@@ -1,2 +1,13 @@
 <!--pages/personalCenter/center.wxml-->
-<text>pages/personalCenter/center.wxml</text>
+<view id="pCenter">
+  <button type="primary" size="default" bindTap="loadBtn1" hover-class="button-hover">
+    点击显示加载中1
+  </button>
+  <button type="default" size="default" bindTap="loadBtn2" hover-class="button-hover">
+    点击显示加载中2
+  </button>
+  <button type="warn" open-type="openSetting" size="default" bindTap="loadBtn3"
+    hover-class="button-hover" >
+    点击显示加载中3
+  </button>
+</view>

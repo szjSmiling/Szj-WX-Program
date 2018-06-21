@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#f8f8f8",
+  "navigationBarTitleText": "购物车详情",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "dialog": "/components/dialog/dialog"
+  }
+}

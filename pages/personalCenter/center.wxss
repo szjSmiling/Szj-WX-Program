@@ -1,1 +1,11 @@
 /* pages/personalCenter/center.wxss */
+#pCenter{
+  padding:20rpx 50rpx;
+}
+button{
+  width:200px;
+  margin:20rpx auto;
+}
+.hover{
+  background:#f00;
+}
