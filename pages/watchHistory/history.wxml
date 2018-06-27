@@ -1,2 +1,44 @@
 <!--pages/watchHistory/history.wxml-->
-<text>pages/watchHistory/history.wxml</text>
+<view class="container">
+  <!-- 左边栏 -->
+  <view class="nav_left">
+    <block wx:for="{{navLeftItems}}" wx:key="">
+    <!--当前项的id等于item项的id，那个就是当前状态-->  
+    <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->  
+      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" 
+        bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">
+        {{item.tree.desc}}
+      </view>
+    </block>
+  </view>
+  <!-- 右边栏 -->
+  <view class="nav_right">
+    <!--如果有数据，才遍历项-->  
+    <view wx:if="{{navRightItems[curIndex].tree.nodes}}">
+      <block wx:for="{{navRightItems[curIndex].tree.nodes}}" wx:key="">
+        <view class="nav_right_items">
+          <navigator class="item-img" url="../list/index?brand={{item.tree.id}}&typeid={{navRightItems[curIndex].id}}">
+            <!--用view包裹图片组合，如果有图片就用，无图片提供就使用50x30的这个默认图片-->  
+            <view class="">                
+              <block wx:if="{{item.logo}}">  
+                <image src="{{item.logo}}" wx:key=""></image>  
+              </block>  
+              <block wx:else>  
+                <image src="http://temp.im/50x30"></image>  
+              </block>  
+            </view>
+            <!--如果有文字，就用文字；无文字就用其他-->  
+            <view wx:if="{{item.desc}}">  
+              <text>{{item.desc}}</text>  
+            </view>  
+            <view wx:else>  
+              <text>{{item.desc2}}</text>  
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+    <!--如果无数据，则显示数据-->  
+    <view wx:else>暂无数据</view>
+  </view>
+</view>

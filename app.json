@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/watchHistory/history",
     "pages/personalCenter/center",
     "pages/shoppingCar/index",
     "pages/welcome/welcome",
-    "pages/watchHistory/history",
     "pages/movie/movie",
     "pages/movie/search/search",
     "pages/movie/movie-more/movie-more",
@@ -13,8 +13,10 @@
     "pages/movie/movie-detail/celebrity/celebrity",
     "pages/movie/movie-detail/movie-poster/movie-poster",
     "pages/shoppingCar/shopDetail/shopDetail",
+    "pages/personalCenter/showToast/center",
     "components/loading/loading",
-    "components/dialog/dialog"
+    "components/dialog/dialog",
+    "pages/list/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

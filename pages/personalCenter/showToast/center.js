@@ -44,7 +44,7 @@ Page({
   loadBtn2(){
     wx.showLoading({
       title:'加载中2...',
-      image:'../../images/loadIcon/loadIcon1.gif'
+      image:'../../../images/loadIcon/loadIcon1.gif'
     });
     setTimeout(function(){
       wx.hideLoading();
