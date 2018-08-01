@@ -23,7 +23,7 @@
       slot的内容
     </text>
   </loading-tag>
-  <scroll-view class="scroll" id="shopCar" scroll-y="true">
+  <scroll-view class="scroll" id="shopCarChild" scroll-y="true">
     <view class="separate"></view>
     <view wx:for="{{carts}}" wx:key="index">
       <view class="cart_container">
