@@ -1,1 +1,12 @@
 /* pages/shopDetail/detail.wxss */
+#shopDetail{}
+.shopInfo{
+  padding:50rpx;
+}
+.shopInfo image{width: 100%;}
+.shopInfo .info-number{
+  
+}
+.shopOperate{
+
+}

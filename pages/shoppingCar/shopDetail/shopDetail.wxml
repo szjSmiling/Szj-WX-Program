@@ -1,9 +1,19 @@
 <!-- pages/shopDetail/detail.wxml -->
 <view class="container">
-  <dialog id="dialog" title="我是标题" content="恭喜你，学会了小程序组件" 
-  cancelText="知道了" confirm="谢谢你" 
-  bind:cancelEvent="_cancelEvent" 
-  bind:confirmEvent="_confirmEvent">
+  <dialog id="dialog" title="{{shop.name}}" content="是否立即购买该商品呢?{{shop.des}}" 
+    cancelText="残忍放弃" confirm="确定"
+    bind:cancelEvent="_cancelEvent" 
+    bind:confirmEvent="_confirmEvent">
   </dialog>
-  <button type="primary" bindtap="showDialog">ClickMe!</button>
+  <view id="shopDetail">
+    <view class="shopInfo">
+      <image src="{{shop.url}}" mode="scaleToFill" data-dec="scaleToFill：不保持纵横比缩放图片，使图片完全适应"></image>
+      <view class="info-number" >
+        
+      </view>
+    </view>
+    <view class="shopOperate">
+
+    </view>
+  </view>
 </view>

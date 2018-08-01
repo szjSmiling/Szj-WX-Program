@@ -4,25 +4,47 @@ Component({
     innerText: {
       type: String,
       value: 'loading...',
-      observer:function(){console.log()}
+      observer:function(val,oldVal){
+        console.log(val+"****"+oldVal)
+      }
     },
     hidden:{
       type: Boolean,
       value: false,
-      observer:function(){console.log()}
+      observer:function(val,oldVal){
+        console.log(val+"****"+oldVal)
+      }
+    },
+    title:{
+      type: String,
+      value:"555",
+      observer:function(val,oldVal){
+        console.log(val+"****"+oldVal)
+      }
     }
   },
   data: {
-    // 这里是一些组件内部数据
-    obj: {}
+    _a:"aa",
+  },
+  created () {
+    console.log(this);
+  },
+  attached(){
+    this.setData({
+      title:"想要阻止冒泡(或者组件内部点击函数)，请使用catchtap"
+    })
   },
   methods: {
     // 这里是自定义方法
     cancel(){
-      console.log("触发取消!");
+      this.setData({
+        hidden:true,
+      })
     },
-    _click: function(){
-      this.triggerEvent("cencelEvent");//triggerEvent函数接受三个值：事件名称、数据、选项值  
+    childEvent(){
+      var myEventDetail = {}; // detail对象，提供给事件监听函数
+      var myEventOption = {}; // 触发事件的选项{ bubbles: false, composed: false, capturePhase: false }
+      this.triggerEvent('cencelEvent', myEventDetail,{ bubbles: false, composed: false, capturePhase: false });//通过triggerEvent指定A页面中的cencelEvent是见面，从而触发页面A中的tryCommunication自定义事件
     }
   }
 })

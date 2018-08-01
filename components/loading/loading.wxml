@@ -1,4 +1,4 @@
 <view class="loading" hidden="{{hidden}}">
-  <loading hidden="{{hidden}}">{{innerText}}</loading>
+  <loading catchtap="childEvent">{{innerText}}</loading>
 </view>
-<slot></slot>
+<slot><!-- 外部文本会显示在这里 --></slot>

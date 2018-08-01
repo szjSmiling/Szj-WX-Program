@@ -10,16 +10,49 @@
   </scroll-view>
   <view class="rec">
     <swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
-      <swiper-item class="swiper-item" wx:for="{{items}}" wx:key="{{index}}" bindtap="bindViewTap">
+      <swiper-item class="swiper-item" wx:for="{{items}}" wx:key="{{index}}" 
+        data-id="{{item.id}}" data-url="../{{item.img}}" 
+        bindtap="bindViewTap">
         <view class="slide-view"><image src="{{item.img}}"></image></view>
       </swiper-item>
     </swiper>
   </view>
-  <loading-tag id="loadTag" inner-text="{{loading.text}}" hidden="{{loading.hidden}}" 
-     bind:cencelEvent='tryCommunication'>
+  <loading-tag id="loadTag" title="{{loading.title}}" inner-text="{{loading.text}}" hidden="{{loading.hidden}}" 
+    bind:cencelEvent='tryCommunication' data-test-a="{{a}}" data-test-b="{{b}}" >
     <text class="loadText">
-      如果不写 inner-text 属性,那么就会使用默认值.这里使用则可以根据页面自定义内容;
-      注意: inner-text="{{}}" 是为了和组件进行通信传值. bind:loadFn:'你想要在组件里调用的方法名'
+      slot的内容
     </text>
   </loading-tag>
+  <scroll-view class="scroll" id="shopCar" scroll-y="true">
+    <view class="separate"></view>
+    <view wx:for="{{carts}}" wx:key="index">
+      <view class="cart_container">
+        <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" 
+          src="{{item.isSelect?'../../images/cart/comment_select.png':'../../images/cart/comment_normal.png'}}" />
+        <image class="item-image" src="{{item.pic}}"></image>
+        <view class="column">
+          <text class="title">{{item.name}}</text>
+          <view class="row">
+            <text class="sku-price">￥</text>
+            <text class="sku-price">{{item.price}}</text>
+            <view class="sku">
+              <template is="quantity" data="{{ ...item.count, componentId: index }}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="separate"></view>
+    </view>
+  </scroll-view>
+  <view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+      <image class="item-allselect" bindtap="allSelect" 
+        src="{{isAllSelect?'../../images/cart/comment_select.png':'../../images/cart/comment_normal.png'}}" />
+      <text class="small_text">全选</text>
+      <text>合计:￥ </text>
+      <text class="price">{{totalMoney}}</text>
+      <button class="button-red" bindtap="toBuy" formType="submit">去结算</button>
+    </view>
+  </view>
 </view>

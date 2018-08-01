@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/shoppingCar/index",
     "pages/watchHistory/history",
     "pages/personalCenter/center",
-    "pages/shoppingCar/index",
     "pages/welcome/welcome",
     "pages/movie/movie",
     "pages/movie/search/search",
@@ -16,7 +16,11 @@
     "pages/personalCenter/showToast/center",
     "components/loading/loading",
     "components/dialog/dialog",
-    "pages/list/index"
+    "pages/list/index",
+    "pages/watchHistory/side-slide/index",
+    "pages/watchHistory/side-jingdong/index",
+    "pages/watchHistory/side-slide2/index",
+    "pages/watchHistory/side-slide3/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
