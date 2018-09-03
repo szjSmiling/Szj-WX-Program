@@ -19,16 +19,15 @@
   </view>
   <loading-tag id="loadTag" title="{{loading.title}}" inner-text="{{loading.text}}" hidden="{{loading.hidden}}" 
     bind:cencelEvent='tryCommunication' data-test-a="{{a}}" data-test-b="{{b}}" >
-    <text class="loadText">
-      slot的内容
-    </text>
+    <text class="loadText">slot的内容</text>
   </loading-tag>
   <scroll-view class="scroll" id="shopCarChild" scroll-y="true">
     <view class="separate"></view>
     <view wx:for="{{carts}}" wx:key="index">
       <view class="cart_container">
-        <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" 
-          src="{{item.isSelect?'../../images/cart/comment_select.png':'../../images/cart/comment_normal.png'}}" />
+        <i class="item-select iconfont icon-selected {{item.isSelect?'item-selected':''}}" 
+        bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" >
+        </i>
         <image class="item-image" src="{{item.pic}}"></image>
         <view class="column">
           <text class="title">{{item.name}}</text>
@@ -47,8 +46,9 @@
   <view class="bottom_total">
     <view class="bottom_line"></view>
     <view class="row">
-      <image class="item-allselect" bindtap="allSelect" 
-        src="{{isAllSelect?'../../images/cart/comment_select.png':'../../images/cart/comment_normal.png'}}" />
+      <i class="item-allselect iconfont icon-selected {{isAllSelect?'item-selected':''}}" 
+      bindtap="allSelect" >
+      </i>
       <text class="small_text">全选</text>
       <text>合计:￥ </text>
       <text class="price">{{totalMoney}}</text>

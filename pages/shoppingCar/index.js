@@ -8,6 +8,8 @@ Page({
     toView: "total",
     a: "aaa",
     b: "bbb",
+    isAllSelect: false,
+    totalMoney: 0,
     loading: {
       text: "加载中...",
       hidden: false,
@@ -22,38 +24,30 @@ Page({
       { id: "油画", type: "oil", img: "../../images/banner/b_car9.jpg" },
       { id: "水墨画", type: "ink", img: "../../images/banner/b_car10.jpg" },
     ],
-    isAllSelect: false,
-    totalMoney: 0,
-    // 商品详情介绍
     carts: [
       {
         pic: "http://mz.djmall.xmisp.cn/files/product/20161201/148058328876.jpg",
         name: "日本资生堂洗颜", price: 200, isSelect: false,
-        // 数据设定
         count: { quantity: 2, min: 1, max: 20 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148058301941.jpg',
         name: "倩碧焕妍活力精华露", price: 340, isSelect: false,
-        // 数据设定
         count: { quantity: 1, min: 1, max: 20 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/14805828016.jpg',
         name: "特效润肤露", price: 390, isSelect: false,
-        // 数据设定
         count: { quantity: 3, min: 1, max: 20 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148058228431.jpg',
         name: "倩碧水嫩保湿精华面霜", price: 490, isSelect: false,
-        // 数据设定
         count: { quantity: 1, min: 1, max: 20 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148057953326.jpg',
         name: "兰蔻清莹柔肤爽肤水", price: 289, isSelect: false,
-        // 数据设定
         count: { quantity: 10, min: 1, max: 20 },
       },
       {
@@ -199,6 +193,7 @@ Page({
     });
   },
   handleQuantityChange(e) {//数量变化处理
+    console.log(e);
     var componentId = e.componentId;
     var quantity = e.quantity;
     this.data.carts[componentId].count.quantity = quantity;

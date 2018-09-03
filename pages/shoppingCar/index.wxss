@@ -1,4 +1,5 @@
 /* index.wxss */
+@import "../shopcart/shopcart.wxss";
 view , scroll-view{
   padding: 0px;
   margin: 0px;
@@ -47,6 +48,12 @@ view , scroll-view{
   width: 100%;
   height:1005;
 }
+.loadText{
+  display:block;
+  font-weight: bold;
+  padding:10rpx 0;
+  border-bottom:1px solid #999;
+}
 
 /* 购物车的样式 */
 #shopCarChild .cart_container {
@@ -88,15 +95,16 @@ view , scroll-view{
   margin-left: 10rpx;
 }
 .item-select {
-  width: 40rpx;
-  height: 40rpx;
+  font-size:50rpx;
   margin-top: 90rpx;
   margin-left: 20rpx;
 }
 .item-allselect {
-  width: 40rpx;
-  height: 40rpx;
+  font-size:50rpx;
   margin-left: 20rpx;
+}
+.item-selected{
+  color:#0f0;
 }
 .item-image {
   width: 180rpx;
