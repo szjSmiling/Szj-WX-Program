@@ -16,7 +16,7 @@
     "pages/personalCenter/showToast/center",
     "components/loading/loading",
     "components/dialog/dialog",
-    "pages/shopcart/shopcart",
+    "pages/template/shopcart",
     "pages/list/index",
     "pages/watchHistory/side-slide/index",
     "pages/watchHistory/side-jingdong/index",

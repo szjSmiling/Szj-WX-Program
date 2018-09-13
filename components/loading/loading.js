@@ -5,21 +5,21 @@ Component({
       type: String,
       value: 'loading...',
       observer:function(val,oldVal){
-        console.log(val+"****"+oldVal)
+        // console.log(val+"****"+oldVal)
       }
     },
     hidden:{
       type: Boolean,
       value: false,
       observer:function(val,oldVal){
-        console.log(val+"****"+oldVal)
+        // console.log(val+"****"+oldVal)
       }
     },
     title:{
       type: String,
       value:"555",
       observer:function(val,oldVal){
-        console.log(val+"****"+oldVal)
+        // console.log(val+"****"+oldVal)
       }
     }
   },
@@ -27,7 +27,7 @@ Component({
     _a:"aa",
   },
   created () {
-    console.log(this);
+    // console.log(this);
   },
   attached(){
     this.setData({

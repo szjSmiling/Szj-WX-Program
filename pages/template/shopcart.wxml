@@ -1,0 +1,12 @@
+
+<template name="quantity">
+  <!-- 主容器 -->  
+  <view class="stepper">  
+    <!-- 减号 -->  
+    <text class="{{quantity <= min ? 'disabled' : 'normal'}}" bindtap="delCount" data-index="{{componentId}}">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="handleQuantityChange" value="{{quantity <= min?min:quantity}}"  disabled="disabled"/>  
+    <!-- 加号 -->  
+    <text class="{{quantity >= max ? 'disabled' : 'normal'}}" bindtap="addCount" data-index="{{componentId}}">+</text>  
+  </view>  
+</template>

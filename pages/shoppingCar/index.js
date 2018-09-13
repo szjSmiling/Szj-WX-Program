@@ -28,32 +28,32 @@ Page({
       {
         pic: "http://mz.djmall.xmisp.cn/files/product/20161201/148058328876.jpg",
         name: "日本资生堂洗颜", price: 200, isSelect: false,
-        count: { quantity: 2, min: 1, max: 20 },
+        count: { quantity: 1, min: 1, max: 10 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148058301941.jpg',
         name: "倩碧焕妍活力精华露", price: 340, isSelect: false,
-        count: { quantity: 1, min: 1, max: 20 },
+        count: { quantity: 1, min: 2, max: 15 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/14805828016.jpg',
         name: "特效润肤露", price: 390, isSelect: false,
-        count: { quantity: 3, min: 1, max: 20 },
+        count: { quantity: 1, min: 1, max: 12 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148058228431.jpg',
         name: "倩碧水嫩保湿精华面霜", price: 490, isSelect: false,
-        count: { quantity: 1, min: 1, max: 20 },
+        count: { quantity: 1, min: 1, max: 8 },
       },
       {
         pic: 'http://mz.djmall.xmisp.cn/files/product/20161201/148057953326.jpg',
         name: "兰蔻清莹柔肤爽肤水", price: 289, isSelect: false,
-        count: { quantity: 10, min: 1, max: 20 },
+        count: { quantity: 1, min: 5, max: 20 },
       },
       {
         pic: "http://mz.djmall.xmisp.cn/files/product/20161201/148057921620_middle.jpg",
         name: "LANCOME兰蔻小黑瓶精华", price: 230, isSelect: false,
-        count: { quantity: 1, min: 1, max: 20 },
+        count: { quantity: 1, min: 1, max: 10 },
       },
     ],
   },
@@ -133,18 +133,16 @@ Page({
   },
   // 购物车逻辑
   switchSelect: function (e) {
-    // 获取item项的id，和数组的下标值  
+    // 获取item项的id，和数组的下标值 
     var Allprice = 0, i = 0;
-    let id = e.target.dataset.id,
-
-      index = parseInt(e.target.dataset.index);
+    let id = e.target.dataset.id,index = parseInt(e.target.dataset.index);
     this.data.carts[index].isSelect = !this.data.carts[index].isSelect;
     //价钱统计
     if (this.data.carts[index].isSelect) {
-      this.data.totalMoney = this.data.totalMoney + this.data.carts[index].price;
+      this.data.totalMoney = this.data.totalMoney + this.data.carts[index].price * this.data.carts[index].count.quantity;
     }
     else {
-      this.data.totalMoney = this.data.totalMoney - this.data.carts[index].price;
+      this.data.totalMoney = this.data.totalMoney - this.data.carts[index].price * this.data.carts[index].count.quantity;
     }
     //是否全选判断
     for (i = 0; i < this.data.carts.length; i++) {
@@ -190,6 +188,28 @@ Page({
     });
     this.setData({
       showDialog: !this.data.showDialog
+    });
+  },
+  addCount(e){
+    let index = e.target.dataset.index;
+    let max = this.data.carts[index].count.max;
+    let count = this.data.carts[index].count.quantity;    // 商品总数量+1
+    if (count < max) {      
+      this.data.carts[index].count.quantity++;
+    }
+    this.setData({ // 将数值与状态写回        
+      carts: this.data.carts
+    });    
+  },
+  delCount: function (e) {
+    let index = e.target.dataset.index;
+    let min = this.data.carts[index].count.min;
+    let count = this.data.carts[index].count.quantity; // 商品总数量-1
+    if (count > min) {      
+      this.data.carts[index].count.quantity--;
+    }
+    this.setData({ // 将数值与状态写回  
+      carts: this.data.carts
     });
   },
   handleQuantityChange(e) {//数量变化处理
