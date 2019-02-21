@@ -12,8 +12,8 @@
 .nav view:nth-child(1){border-right:1px solid gainsboro;}
 .default{line-height:70rpx;text-align:center;flex:1;color:#0b9d78;font-weight:bold;font-size:28rpx;}
 .red{background:#0b9d78;line-height:70rpx;text-align:center;color:#fff;flex:1;font-weight:bold;font-size:28rpx;}
-.show{display:block;text-align:center;line-height:200rpx;border:1px solid #eee;}
-.hidden{display:none;text-align:center;line-height:200px;border:1px solid #eee;}
+.show{background:#eee;display:block;text-align:center;line-height:100rpx;border:1px solid #eee;}
+.hidden{background:#eee;display:none;text-align:center;line-height:100px;border:1px solid #eee;}
 
 .getInfo{
   line-height:2;       
@@ -47,7 +47,7 @@
   cursor: pointer;
   position: fixed;
   right:10rpx;
-  top: 45%;
+  top: 30%;
 }
 map .controls {
   position: relative;
