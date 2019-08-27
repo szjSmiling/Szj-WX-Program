@@ -67,5 +67,6 @@
         "text": "浏览记录"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
